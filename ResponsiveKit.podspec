@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 
 	s.platform     = :ios, "8.0"
 
-	s.source       = { :git => "https://github.com/shnhrrsn/ResponsiveKit.git", :branch => 'master' }
+	s.source       = { :git => "https://github.com/shnhrrsn/ResponsiveKit.git", :tag => s.version }
 
 	s.source_files = "*.swift"
 	s.requires_arc = true
