@@ -35,7 +35,7 @@ width targeting on the narrower end due to most layouts scrolling
 vertically and UI decisions being made based on how wide a layout
 is, not how tall it is.
 */
-public enum ResponsiveLength {
+public enum ResponsiveLength: Int {
 	/**
 	width <= 349.0
 	height <= 424.0
@@ -129,3 +129,22 @@ extension ResponsiveLength: ResponsiveValue {
 	}
 
 }
+
+extension ResponsiveLength: Comparable { }
+
+public func <(lhs: ResponsiveLength, rhs: ResponsiveLength) -> Bool {
+	return lhs.rawValue < rhs.rawValue
+}
+
+public func <=(lhs: ResponsiveLength, rhs: ResponsiveLength) -> Bool {
+	return lhs.rawValue <= rhs.rawValue
+}
+
+public func >=(lhs: ResponsiveLength, rhs: ResponsiveLength) -> Bool {
+	return lhs.rawValue >= rhs.rawValue
+}
+
+public func >(lhs: ResponsiveLength, rhs: ResponsiveLength) -> Bool {
+	return lhs.rawValue > rhs.rawValue
+}
+

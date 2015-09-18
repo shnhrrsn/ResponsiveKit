@@ -31,7 +31,7 @@ Provides a loose representation of the device size.
 Key metrics are intentionally fuzzy for future proofing, so
 correlations to existing devices are considered approximate.
 */
-public enum DeviceSize {
+public enum DeviceSize: Int {
 	/** Size ~= iPhone 3.5" */
 	case XS
 
@@ -87,6 +87,24 @@ extension DeviceSize: ResponsiveValue {
 		}
 	}
 
+}
+
+extension DeviceSize: Comparable { }
+
+public func <(lhs: DeviceSize, rhs: DeviceSize) -> Bool {
+	return lhs.rawValue < rhs.rawValue
+}
+
+public func <=(lhs: DeviceSize, rhs: DeviceSize) -> Bool {
+	return lhs.rawValue <= rhs.rawValue
+}
+
+public func >=(lhs: DeviceSize, rhs: DeviceSize) -> Bool {
+	return lhs.rawValue >= rhs.rawValue
+}
+
+public func >(lhs: DeviceSize, rhs: DeviceSize) -> Bool {
+	return lhs.rawValue > rhs.rawValue
 }
 
 public extension UIDevice {
