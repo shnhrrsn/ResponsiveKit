@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 	s.name         = "ResponsiveKit"
-	s.version      = "0.1"
+	s.version      = "0.2"
 	s.summary      = "Swift framework for working with various view sizes in iOS."
 	s.homepage     = "https://github.com/shnhrrsn/ResponsiveKit"
 	s.license      = "MIT"
