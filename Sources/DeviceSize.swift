@@ -114,7 +114,15 @@ public extension UIDevice {
 		if let size = self.dynamicType.size {
 			return size
 		} else {
-			let size = DeviceSize.responsiveSizeForScreenSize(UIScreen.mainScreen().bounds.size)
+			let screen: UIScreen
+
+			#if swift(>=3.0)
+				screen = UIScreen.main()
+			#else
+				screen = UIScreen.mainScreen()
+			#endif
+
+			let size = DeviceSize.responsiveSizeForScreenSize(screen.bounds.size)
 			self.dynamicType.size = size
 			return size
 		}
